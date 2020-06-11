@@ -1,0 +1,10 @@
+$CI = & get_instance();	
+$CI->db->select('balance_register, tarif_register,sender_name');
+       $CI->db->from('mso_sms_registration');
+$query = $CI->db->get();
+	
+foreach ($query->result_array() as $row){
+	$balance_register = $row['balance_register'];
+	$tarif_register = $row['tarif_register'];
+	$sender_name = $row['sender_name'];
+}
